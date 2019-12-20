@@ -1,1 +1,12 @@
 onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))'
+
+
+//How to limit Input for Input type = Number 
+
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    
+            <input type="number" pattern='[0-9]{1}[0-9]{16}' maxlength="17"
+            class="form-control view-edit-form-control" id="customerAccountNumber" aria-describedby="emailHelp" required
+            name="currentData.accountNumber" v-model="currentData.accountNumber"
+            title="Account number cannot have alphabets & must be of 17 digits"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
